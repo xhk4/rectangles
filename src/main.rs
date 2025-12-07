@@ -1,9 +1,17 @@
-fn main() {
-    let x: f64 = 10.0;
-    let y: f64 = 15.0;
-    println!("Area: {}", area(x, y));
+struct Rect {
+    width: f64,
+    height: f64
 }
 
-fn area(x: f64, y: f64) -> f64{
-    x * y
+fn main() {
+    let rect = Rect {
+        width: 10.0,
+        height: 15.5,
+    };
+
+    println!("Area: {}", area(&rect));
+}
+
+fn area(rect: &Rect) -> f64 {
+    rect.width * rect.height
 }
